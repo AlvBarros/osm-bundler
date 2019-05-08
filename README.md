@@ -1,5 +1,4 @@
-# osm-bundler
-
+# osm-bundler for Winso 64 bits
 
 3D geometry reconstruction for OpenStreetMap
 
