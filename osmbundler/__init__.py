@@ -13,6 +13,8 @@ from matching import *
 import features
 from features import *
 
+from datetime import datetime
+
 # a helper function to get list of photos from a directory
 def getPhotosFromDirectory(photoDir):
     return [f for f in os.listdir(photoDir) if os.path.isfile(os.path.join(photoDir, f)) and os.path.splitext(f)[1].lower()==".jpg"]
@@ -82,7 +84,8 @@ class OsmBundler():
         # save current directory (i.e. from where RunBundler.py is called)
         self.currentDir = os.getcwd()
         # create a working directory
-        self.workDir = tempfile.mkdtemp(prefix="osm-bundler-")
+        self.workDir = os.mkdir("osm-bundler-"+datetime.today().strftime('%Y-%m-%d-%H-%M-%S'))
+        # old: self.workDir = tempfile.mkdtemp(prefix="osm-bundler-")
         logging.info("Working directory created: "+self.workDir)
         
         if not (os.path.isdir(self.photosArg) or os.path.isfile(self.photosArg)):
