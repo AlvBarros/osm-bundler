@@ -85,7 +85,7 @@ class OsmBundler():
         self.currentDir = os.getcwd()
         # create a working directory
         self.workDir = "osm-bundler-"+datetime.today().strftime('%Y-%m-%d-%H-%M-%S')
-        os.mkdir(self.workDir,999)
+        os.mkdir(self.workDir,999) # Permission denied on MacOS
         # old: self.workDir = tempfile.mkdtemp(prefix="osm-bundler-")
         logging.info("Working directory created: "+self.workDir)
         
