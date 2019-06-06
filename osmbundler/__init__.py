@@ -84,7 +84,8 @@ class OsmBundler():
         # save current directory (i.e. from where RunBundler.py is called)
         self.currentDir = os.getcwd()
         # create a working directory
-        self.workDir = os.mkdir("osm-bundler-"+datetime.today().strftime('%Y-%m-%d-%H-%M-%S'))
+        self.workDir = "osm-bundler-"+datetime.today().strftime('%Y-%m-%d-%H-%M-%S')
+        os.mkdir(self.workDir,999)
         # old: self.workDir = tempfile.mkdtemp(prefix="osm-bundler-")
         logging.info("Working directory created: "+self.workDir)
         
