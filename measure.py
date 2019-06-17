@@ -1,3 +1,5 @@
+# python measure.py --image C:/test.jpg --width 0.955
+
 from scipy.spatial import distance as dist
 from imutils import perspective
 from imutils import contours
